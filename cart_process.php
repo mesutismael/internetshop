@@ -9,6 +9,11 @@ if (isset($_POST['product_code'])) {
         $new_product[$key] = filter_var($value, FILTER_SANITIZE_STRING); //create a new product array
     }
 
+    //update the product rating
+    $smt = $mysqli_conn->prepare('update products set current_rating =? WHERE product_code=? LIMIT 1');
+    $smt->bind_param('ds',  $new_product['curent_rate'], $new_product['product_code']);
+    $smt->execute();
+
     //we need to get product name and price from database.
     $statement = $mysqli_conn->prepare('SELECT product_name, product_price FROM products WHERE product_code=? LIMIT 1');
     $statement->bind_param('s', $new_product['product_code']);

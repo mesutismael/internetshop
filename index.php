@@ -150,8 +150,12 @@ $(document).ready(function(){
 
 	 $('.transport-type').on('change',function(){
 		  $selected = $(this).filter(':checked');
-			$.post('cart_process.php',{cost:$selected.val()});
+			$.post('cart_process.php',{cost:$selected.val()}).done(function(){
+				alert('transport type updated');
+			});
 	 });
+
+
 
    });
 
