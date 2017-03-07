@@ -90,10 +90,12 @@ echo $products_list;
 <div class="transport">
 	 <h3>choose a transport type</h3>
 	 <form class="" action="index.html" method="post">
-	 	  <label for="pickup">pick up ($0)</label>
+
 			<input type="radio" id="pickup" checked class="transport-type" name="transport" value="0">
-			<label for="pickup">UPS ($5)</label>
+			<label for="pickup">pick up ($0)</label>
+
 			<input type="radio" id="pickup" class="transport-type" name="transport" value="5">
+			<label for="pickup">UPS ($5)</label>
 	 </form>
 </div>
 
